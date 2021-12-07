@@ -50,3 +50,22 @@ print(l,r)
 
 after_rotate = after_rotate[:,:,l:r,b:u]
 imshow(after_rotate,size=(6,6))
+
+
+# pre rotation 36 times: the pivot matters when conduct a rotation
+
+# input_data = np.pad(in_img, self.padding_2, mode='constant')
+# in_shape = (1,) + input_data.shape
+# input_data = input_data.reshape(in_shape).transpose(0, 3, 1, 2)
+# 
+# crop = input_data
+# crop = crop.repeat(self.n_rotations,1,1,1)
+# pivot = np.array([p[1], p[0]]) + self.pad_size_2
+# pivot = torch.from_numpy(pivot).to(self.device).repeat(self.n_rotations,1).to(torch.float32)
+# crop = K.geometry.rotate(crop,torch.from_numpy(np.linspace(0., 360., self.n_rotations,
+#                                                            endpoint=False,dtype=np.float32)).to(self.device),
+#                          mode='nearest',center=pivot)
+
+
+
+
