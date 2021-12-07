@@ -1,0 +1,11 @@
+import torch
+
+def cd_loss_pytorch(output, target, lnorm=2):
+    # the input: the predicted points (B *N *3), the ground-truth points (B *N *3)
+    # the return is the average cd loss for each point (number of total points=B*N)
+    #l1,index1 = torch.min(torch.cdist(output, target, p=lnorm), dim=2)
+    #index1 =  index1.unsqueeze(dim=1).permute(0,2,1)
+    #l2 = torch.min(torch.cdist(target, output, p=lnorm), dim=2)[0]
+    
+    loss = torch.min(torch.cdist(output, target, p=lnorm), dim=2)[0].mean() + torch.min(torch.cdist(target, output, p=lnorm), dim=2)[0].mean()
+    return loss
