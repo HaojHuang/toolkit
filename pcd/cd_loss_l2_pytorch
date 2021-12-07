@@ -9,3 +9,5 @@ def cd_loss_pytorch(output, target, lnorm=2):
     
     loss = torch.min(torch.cdist(output, target, p=lnorm), dim=2)[0].mean() + torch.min(torch.cdist(target, output, p=lnorm), dim=2)[0].mean()
     return loss
+
+# for l1 version chamfer distance, check: https://github.com/krrish94/chamferdist     or     pytorch3d lib
